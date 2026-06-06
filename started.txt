@@ -1,0 +1,868 @@
+ Research agents are gathering up-to-date technology data and dictionary information. I'll wait for their results before proceeding with the prompt rewrite.
+
+  [Message from subagent 6792e594-addd-4f71-b029-843300e1f1db (Backend Tech Researcher)]
+  Here is a comprehensive, up-to-date research report as of June 2026:
+  ──────
+  ## 1. Python Web Frameworks for API
+
+  ### Comparison Table
+
+   Feature                                | FastAPI                                | Litestar                               | Starlette                              | Django Ninja
+  ----------------------------------------|----------------------------------------|----------------------------------------|----------------------------------------|----------------------------------------
+   Latest Stable                          | ~0.115.x (2026)                        | ~2.x                                   | ~0.40.x                                | ~1.x
+   Async Support                          | Full native                            | Full native                            | Full native                            | Partial (Django ASGI)
+   Auto Docs                              | Swagger + ReDoc                        | Swagger + ReDoc + Stoplight            | Swagger (plugin)                       | Swagger
+   Performance                            | Very High                              | Very High (comparable)                 | Very High (base layer)                 | Moderate (Django overhead)
+   Pydantic                               | v2 native                              | v2 native                              | Manual                                 | v2 native
+   Community                              | Largest (75k+ GitHub stars)            | Growing (~5k stars)                    | Large (established)                    | Moderate (~7k stars)
+   Learning Curve                         | Low                                    | Low-Medium                             | Medium (minimal)                       | Medium (need Django)
+   Dependency Injection                   | Built-in                               | Built-in (more advanced)               | None                                   | Limited
+   WebSocket                              | Yes                                    | Yes                                    | Yes                                    | No
+  ### Pros/Cons
+  FastAPI:
+
+  • ✅ Massive community, tons of tutorials, battle-tested in production
+  • ✅ Automatic OpenAPI docs, Pydantic v2 validation
+  • ✅ Simple to learn, minimal boilerplate
+  • ❌ Some design quirks (global state via app.state)
+  • ❌ Still 0.x versioning (though very stable in practice)
+  Litestar:
+
+  • ✅ More opinionated, cleaner DI system
+  • ✅ Built-in support for more patterns (DTOs, guards)
+  • ❌ Smaller community, fewer resources
+  • ❌ More complex for simple projects
+  Starlette:
+
+  • ✅ Minimal, highest flexibility
+  • ❌ No auto-validation, no auto-docs without plugins
+  • ❌ More boilerplate for a structured API
+  Django Ninja:
+
+  • ✅ Full Django ecosystem (ORM, admin, auth)
+  • ❌ Heavy for 3-5 endpoints
+  • ❌ Django overhead unnecessary here
+
+  ### 🏆 FINAL RECOMMENDATION: FastAPI
+  For 3-5 endpoints with async video processing, FastAPI is the clear winner. Largest community, simplest setup, automatic docs, Pydantic validation, and proven production performance. The project doesn't
+  need Litestar's advanced DI or Django's ORM.
+  ──────
+  ## 2. Video Processing Libraries in Python
+
+  ### Comparison Table
+
+   Feature                                | MoviePy                                | FFmpeg-python                          | PyAV                                   | vidgear
+  ----------------------------------------|----------------------------------------|----------------------------------------|----------------------------------------|----------------------------------------
+   Latest Version                         | 2.1.x (major rewrite)                  | 0.2.x                                  | 13.x                                   | 0.3.x
+   Approach                               | High-level Python                      | FFmpeg CLI wrapper                     | FFmpeg C bindings                      | Multi-backend
+   Concatenation                          |  concatenate_videoclips()              | FFmpeg concat filter                   | Manual frame-level                     | Limited
+   Performance                            | Moderate (subprocess)                  | High (direct FFmpeg)                   | Very High (C-level)                    | High
+   Memory Usage                           | High (loads into RAM)                  | Low (streaming)                        | Low-Medium                             | Low
+   Codec Support                          | Via FFmpeg                             | Full FFmpeg                            | Full FFmpeg                            | Via backend
+   Ease of Use                            | Very Easy                              | Easy                                   | Complex                                | Moderate
+   Dependencies                           | FFmpeg required                        | FFmpeg required                        | FFmpeg libs                            | Various
+
+  ### Key Notes
+
+  MoviePy 2.x (2024-2026 rewrite):
+
+  • Major API changes from 1.x:  VideoFileClip  →  VideoClip.from_file()  in newer versions
+  • Still uses FFmpeg subprocess internally
+  • Good for simple concatenation but loads clips into memory
+  •  moviepy==1.0.3  (from original prompt) is legacy
+  FFmpeg-python:
+  • Thin wrapper around FFmpeg CLI
+  • Very efficient: streams data, doesn't load into memory
+  • Concat filter:  ffmpeg.concat(stream1, stream2).output('out.mp4')
+  • Minimal Python overhead
+  PyAV:
+
+  • Direct C bindings to FFmpeg libraries
+  • Fastest possible, but complex API
+  • Overkill for simple concatenation
+  ### 🏆 FINAL RECOMMENDATION: FFmpeg-python (primary) with MoviePy 2.x (fallback knowledge)
+  For concatenating short .mp4 clips,  ffmpeg-python  is optimal:
+  • Lower memory usage than MoviePy (streaming, not loading into RAM)
+  • Faster execution (direct FFmpeg, no Python frame processing)
+  • Simple concat API for this use case
+  • FFmpeg handles resolution normalization natively
+  However, MoviePy 2.x is acceptable if simpler API is preferred. If using MoviePy, use version 2.x, not 1.0.3.
+  ──────
+  ## 3. Cloudflare R2 Integration
+
+  ### Access Methods
+
+   Method                                            | boto3 (S3-compatible)                            | Cloudflare Python SDK                            | httpx direct
+  ---------------------------------------------------|--------------------------------------------------|--------------------------------------------------|--------------------------------------------------
+   Maturity                                          | Very mature                                      | Relatively new                                   | Manual
+   Auth                                              | S3 API keys                                      | API tokens                                       | Manual headers
+   Features                                          | Full S3 API                                      | R2-specific features                             | Basic GET/PUT
+   Community                                         | Massive (AWS SDK)                                | Growing                                          | N/A
+   Setup                                             | Simple (endpoint override)                       | Simple                                           | Complex
+  ### Best Practices
+  Bucket Structure:
+
+    imo-ishora-clips/
+    ├── signs/           ← Sign language video clips
+    │   ├── privet.mp4
+    │   ├── spasibo.mp4
+    │   └── ...
+    └── outputs/         ← Generated combined videos (optional)
+        └── {job_id}.mp4
+
+  Public URL Setup:
+
+  • Enable R2 public bucket or use Custom Domain
+  • Public URL format:  https://{custom-domain}/{key}  or  https://pub-{hash}.r2.dev/{key}
+  • For private: use presigned URLs via boto3
+  Configuration via boto3:
+
+    # Connect to R2 (S3-compatible)
+    s3 = boto3.client('s3',
+        endpoint_url=f'https://{ACCOUNT_ID}.r2.cloudflarestorage.com',
+        aws_access_key_id=R2_ACCESS_KEY,
+        aws_secret_access_key=R2_SECRET_KEY,
+        region_name='auto'
+    )
+
+  ### 🏆 FINAL RECOMMENDATION: boto3 with S3-compatible API
+  • Most mature, best documented
+  • Seamless: just override  endpoint_url  to point to R2
+  • All S3 operations work (list, get, put, presigned URLs)
+  • For public clips: use R2 public bucket + direct URL (no boto3 needed for reads)
+  • For uploads (admin): use boto3 presigned URLs or direct PUT
+  ──────
+  ## 4. Process/Thread Pool for Video Processing
+  ### Comparison
+   Feature                                | ProcessPoolExecutor                    | ThreadPoolExecutor                     | asyncio.subprocess                     | Celery
+  ----------------------------------------|----------------------------------------|----------------------------------------|----------------------------------------|----------------------------------------
+   CPU-bound tasks                        | ✅ Excellent (bypasses GIL)            | ❌ Poor (GIL)                          | ✅ Good                                | ✅ Excellent
+   Setup Complexity                       | Very Low                               | Very Low                               | Low                                    | High (needs broker)
+   Memory                                 | Higher (process copy)                  | Low                                    | Low                                    | Higher (worker processes)
+   Dependencies                           | stdlib                                 | stdlib                                 | stdlib                                 | Redis/RabbitMQ
+   Scalability                            | Limited (single machine)               | Limited                                | Limited                                | Distributed
+   Error Handling                         | Simple                                 | Simple                                 | Moderate                               | Built-in retry
+  ### Analysis for This Project
+
+  • Video processing (FFmpeg/MoviePy) is CPU-bound → ThreadPoolExecutor won't help due to GIL
+  • However, if using FFmpeg subprocess, the actual work happens in a separate process (FFmpeg binary), so the GIL isn't blocking
+  • This means asyncio.create_subprocess_exec is actually ideal for FFmpeg-based processing
+  • ProcessPoolExecutor is better for MoviePy (which does Python-level processing)
+  • Celery is overkill for an MVP with no distributed needs
+  ### 🏆 FINAL RECOMMENDATION:
+  • If using FFmpeg-python: Use  asyncio.create_subprocess_exec  to run FFmpeg as a subprocess. No pool needed — FFmpeg runs as its own process.
+  • If using MoviePy: Use  ProcessPoolExecutor  with  max_workers=2  to avoid GIL blocking.
+  • Do NOT use Celery for MVP — unnecessary complexity.
+  ──────
+  ## 5. Russian Sign Language (RSL) Datasets
+
+  ### Slovo Dataset
+  Overview:
+  • Full Name: Slovo — A Russian Sign Language Dataset
+  • Source: Research project for RSL recognition
+  • Classes: ~1,000 sign language gestures
+  • Videos: ~16,000 video samples (multiple signers per gesture)
+  • Format: .mp4 files, typically 1-5 seconds each
+  • Resolution: Varies (typically 1920x1080 or 1280x720)
+  • File Naming: Usually organized by class folders, with videos named by signer/take (e.g.,  001_001.mp4  where first is class ID, second is sample)
+  Content Categories in Slovo:
+  The dataset covers common RSL signs including:
+
+  • Everyday words (hello, goodbye, thank you, please, sorry)
+  • Pronouns (I, you, he/she, we, they)
+  • Numbers (0-20+)
+  • Family (mother, father, brother, sister, child)
+  • Actions (go, come, eat, drink, read, write, work, play, help)
+  • Emotions (happy, sad, angry, surprised, afraid)
+  • Colors (red, blue, green, yellow, white, black)
+  • Time (today, tomorrow, yesterday, now, morning, evening)
+  • Question words (what, who, where, when, how, why)
+  • Common nouns (house, school, doctor, food, water, book, city, friend)
+  Important Notes:
+  • The dataset uses class IDs/labels, not transliterated filenames like "privet.mp4"
+  • The original prompt's file naming convention (privet.mp4, spasibo.mp4) is custom — the admin would need to rename/organize clips
+  • Multiple samples per sign — need to select the best/cleanest one per word
+
+  ### Other RSL Datasets
+
+   Dataset                                           | Signs                                            | Videos                                           | Notes
+  ---------------------------------------------------|--------------------------------------------------|--------------------------------------------------|--------------------------------------------------
+   Slovo                                             | ~1,000                                           | ~16,000                                          | Most comprehensive RSL dataset
+   TheRuSLan                                         | ~164                                             | ~12,000                                          | Earlier, smaller dataset
+   WLASL (ASL, not RSL)                              | 2,000                                            | 21,000                                           | American SL, not Russian
+   Spreadthesign                                     | 400+ (RSL subset)                                | Web-only                                         | Online dictionary, not downloadable
+
+  ### 🏆 FINAL RECOMMENDATION:
+
+  • Use Slovo as the primary dataset reference
+  • Admin should prepare clips by:
+      1. Selecting the best sample per sign class
+      2. Renaming to a consistent scheme (e.g.,  privet.mp4 ,  spasibo.mp4 )
+      3. Normalizing resolution/format
+      4. Uploading to Cloudflare R2
+  • The  dictionary.json  should map Uzbek → Russian → R2 file key
+  • Design the system so the admin can update the dictionary and upload new clips independently
+  ──────
+  This concludes the backend technology research report. All recommendations are based on the current state of these technologies as of mid-2026.
+  [Message from subagent 260c81c1-6d5c-49bd-852a-13f16418e328 (Frontend Tech Researcher)]
+
+   Frontend Technology Research Report — June 2026
+  ──────
+  ## 1. Frontend Framework
+
+  ### Comparison Table
+   Feature                             | Next.js 15                                          | Vite + React                        | Astro 5                             | SvelteKit 2
+  -------------------------------------|-----------------------------------------------------|-------------------------------------|-------------------------------------|------------------------------------
+   Latest Version                      | 15.x (stable)                                       | Vite 6.x + React 19                 | 5.x                                 | 2.x
+   Bundle Size                         | Medium-Large (~85-120KB gzipped React+Next runtime) | Small-Medium (~45-60KB React)       | Very Small (~15-30KB, islands)      | Small (~20-40KB)
+   SSR                                 | Built-in                                            | Manual (vite-plugin-ssr / Vinxi)    | Built-in (optional)                 | Built-in
+   SPA Mode                            | Yes (but optimized for SSR)                         | Native SPA                          | Yes (SPA mode)                      | Yes
+   Performance                         | Good (server components help)                       | Excellent (minimal overhead)        | Excellent (partial hydration)       | Excellent
+   Dev Experience                      | Good (complex config sometimes)                     | Excellent (fast HMR, simple)        | Good                                | Good
+   File Routing                        | Built-in (App Router)                               | Manual (react-router)               | Built-in                            | Built-in
+   API Routes                          | Built-in                                            | None (separate backend)             | Built-in                            | Built-in
+   Community                           | Massive (130k+ stars)                               | Very Large                          | Large (50k+ stars)                  | Large
+   Learning Curve                      | Medium (RSC, server actions complexity)             | Low                                 | Low-Medium                          | Medium (different paradigm)
+
+  ### Analysis for This Project
+  This project is a single-page application with:
+  • ONE page with 3 states (input → processing → result)
+  • API calls to a separate FastAPI backend
+  • Video playback
+  • No SEO requirements (it's a demo app)
+  • No need for SSR, server components, or file-based routing
+
+  Next.js is overkill. The App Router, React Server Components, server actions — none of these are needed. Next.js adds complexity and bundle size for features this project won't use.
+  Vite + React is the ideal fit:
+  • Minimal setup, blazing fast HMR
+  • Pure client-side SPA (which is what this app is)
+  • Smallest practical bundle for a React app
+  • No unnecessary server framework overhead
+  • Simple deployment (static files or any host)
+
+  ### 🏆 FINAL RECOMMENDATION: Vite 6 + React 19
+  • Create with:  npx create-vite@latest ./ --template react-ts
+  • Simpler, faster, smaller, and perfectly suited for a single-page demo app
+  • No SSR overhead for an app that doesn't need it
+  ──────
+  ## 2. Animation Libraries for React
+  ### Comparison Table
+   Feature                          | Framer Motion 12                | GSAP 3.12                       | React Spring 9                  | Motion One                      | AutoAnimate
+  ----------------------------------|---------------------------------|---------------------------------|---------------------------------|---------------------------------|---------------------------------
+   Bundle Size                      | ~32-44KB gzipped                | ~25KB (core)                    | ~18KB                           | ~3KB                            | ~2KB
+   API Style                        | Declarative JSX                 | Imperative                      | Hook-based                      | Imperative/small                | Auto
+   AnimatePresence                  | ✅ Built-in                     | ❌ Manual                       | ✅ useTransition                | ❌ Manual                       | ❌ No
+   Layout Animations                | ✅ Excellent                    | ✅ FLIP plugin                  | ❌ Limited                      | ❌ No                           | ✅ Auto
+   Spring Physics                   | ✅ Built-in                     | ❌ Plugin                       | ✅ Core feature                 | ✅ Yes                          | ❌ No
+   Gesture Support                  | ✅ drag, hover, tap             | ✅ ScrollTrigger                | ❌ No                           | ❌ No                           | ❌ No
+   Performance                      | Good                            | Excellent                       | Good                            | Excellent                       | Good
+   Learning Curve                   | Low                             | Medium                          | Medium                          | Low                             | Very Low
+   React Integration                | Native                          | Adapter needed                  | Native                          | Adapter                         | Native
+  ### Analysis
+
+  This project needs:
+
+  • AnimatePresence for phase transitions (input → processing → result)
+  • Stagger animations for word chips appearing one by one
+  • Spring physics for bouncy, lively UI
+  • Layout animations for smooth transitions
+  • Gesture support for hover effects
+
+  Framer Motion covers ALL of these natively. GSAP is powerful but imperative and needs React adapters. React Spring lacks AnimatePresence equivalent ease. Motion One is too minimal.
+
+  ### 🏆 FINAL RECOMMENDATION: Framer Motion 12 (now called "Motion")
+
+  • Note: Framer Motion has been renamed to just "motion" (package:  motion )
+  • Still the best declarative animation library for React
+  •  AnimatePresence  is critical for this project's phase transitions
+  • Bundle size concern is mitigated by tree-shaking (only import what you use)
+  •  import { motion, AnimatePresence } from "motion/react"  (new import path)
+  ──────
+  ## 3. State Management
+  ### Comparison Table
+
+   Feature                          | Zustand 5                       | Jotai 2                         | Nanostores                      | Valtio 2                        | React useState
+  ----------------------------------|---------------------------------|---------------------------------|---------------------------------|---------------------------------|---------------------------------
+   Bundle Size                      | ~1.2KB                          | ~2KB                            | ~0.5KB                          | ~3KB                            | 0 (built-in)
+   API Style                        | Store-based                     | Atomic                          | Atomic                          | Proxy-based                     | Hook-based
+   Boilerplate                      | Minimal                         | Minimal                         | Minimal                         | Minimal                         | None
+   DevTools                         | Redux DevTools                  | Custom                          | None                            | Valtio DevTools                 | React DevTools
+   Derived State                    | Manual                          | Built-in                        | Computed                        | Auto (proxy)                    | useMemo
+   Persistence                      | Middleware                      | Plugin                          | Plugin                          | Plugin                          | Manual
+   Learning Curve                   | Very Low                        | Low                             | Very Low                        | Low                             | None
+   Best For                         | Single store apps               | Many independent atoms          | Framework-agnostic              | Mutable state fans              | Simple apps
+
+  ### Analysis
+
+  This project has ~10 state variables in a single logical store:
+  •  phase ,  inputText ,  jobId ,  words ,  coverage ,  foundCount ,  totalCount ,  videoUrl ,  error ,  pipelineStep
+
+  For this simple structure:
+
+  • useState/useReducer could work but would require prop drilling or context
+  • Zustand is ideal: one store, simple API, minimal bundle, no boilerplate
+  • Jotai is great for atomic state but over-engineered for a single store
+  • Valtio adds proxy complexity unnecessarily
+  ### 🏆 FINAL RECOMMENDATION: Zustand 5
+
+  • Perfect for single-store apps with simple actions
+  • 1.2KB bundle, virtually zero overhead
+  • No provider wrapping needed
+  • Simple:  const useStore = create((set) => ({ ... }))
+  ──────
+  ## 4. CSS Strategy
+  ### Comparison Table
+
+   Feature                                | Tailwind CSS v4                        | Vanilla CSS + Variables                | CSS Modules                            | UnoCSS
+  ----------------------------------------|----------------------------------------|----------------------------------------|----------------------------------------|----------------------------------------
+   Bundle Size                            | Small (purged)                         | Zero runtime                           | Zero runtime                           | Small (purged)
+   Performance                            | Excellent                              | Excellent                              | Excellent                              | Excellent
+   Maintainability                        | Good (utility classes)                 | Good (if organized)                    | Good (scoped)                          | Good
+   Design Tokens                          | Theme config                           | CSS Variables                          | Varies                                 | Theme config
+   Learning Curve                         | Low                                    | Low                                    | Low                                    | Low-Medium
+   Customization                          | High                                   | Highest                                | High                                   | Highest
+   Glassmorphism                          | Custom utilities needed                | Natural                                | Natural                                | Custom needed
+   Dynamic Values                         | CSS Variables                          | Native                                 | CSS Variables                          | CSS Variables
+
+  ### Analysis
+  This project has:
+
+  • Custom glassmorphism effects
+  • CSS custom properties for theming
+  • Complex gradient backgrounds
+  • Keyframe animations (glow, shimmer)
+  • A specific design system (not generic utility classes)
+  Tailwind CSS v4 (major rewrite):
+
+  • New CSS-first configuration (no more tailwind.config.ts)
+  • Better CSS variable integration
+  • But: Custom animations, glassmorphism, and gradients still require  @apply  or custom utilities
+  • Adding overhead for a single-page app with custom design
+
+  Vanilla CSS + CSS Variables:
+  • Full control over every detail
+  • No build tool dependency for styles
+  • CSS custom properties for theming already planned
+  • Complex animations are easier to write directly
+  • Zero runtime, zero configuration
+
+  ### 🏆 FINAL RECOMMENDATION: Vanilla CSS with CSS Custom Properties
+
+  • For a premium, custom-designed single-page app, vanilla CSS gives maximum control
+  • The design already defines CSS variables — use them directly
+  • Custom animations (glow, shimmer, springs) are cleaner in pure CSS
+  • No utility class bloat for a bespoke design
+  • Use CSS nesting (now widely supported) for organization
+  • Use  @layer  for cascade control
+  ──────
+  ## 5. Typography — Google Fonts Pairings
+  ### Top Recommended Pairings for 2026
+
+  Pairing 1: Modern Elegance
+
+   Role                                              | Font                                             | Weight                                           | Character
+  ---------------------------------------------------|--------------------------------------------------|--------------------------------------------------|--------------------------------------------------
+   Display                                           | Fraunces                                         | 300, 400, 700 (italic)                           | Warm, organic serif with optical sizing
+   Body                                              | Inter                                            | 300, 400, 500, 600                               | Clean, highly legible, variable font
+   Mono                                              | JetBrains Mono                                   | 400                                              | Developer-friendly, ligatures
+
+  Pairing 2: Contemporary Premium
+
+   Role                                              | Font                                             | Weight                                           | Character
+  ---------------------------------------------------|--------------------------------------------------|--------------------------------------------------|--------------------------------------------------
+   Display                                           | Playfair Display                                 | 400, 700 (italic)                                | Classic editorial serif
+   Body                                              | DM Sans                                          | 300, 400, 500, 600                               | Geometric, modern sans
+   Mono                                              | Fira Code                                        | 400                                              | Clean mono with ligatures
+  Pairing 3: Tech-Forward
+   Role                                              | Font                                             | Weight                                           | Character
+  ---------------------------------------------------|--------------------------------------------------|--------------------------------------------------|--------------------------------------------------
+   Display                                           | Space Grotesk                                    | 400, 700                                         | Geometric, techy
+   Body                                              | Outfit                                           | 300, 400, 500, 600                               | Rounded, friendly geometric
+   Mono                                              | JetBrains Mono                                   | 400                                              | Standard developer mono
+
+  Pairing 4: Ultra-Modern (2026 trending)
+
+   Role                                              | Font                                             | Weight                                           | Character
+  ---------------------------------------------------|--------------------------------------------------|--------------------------------------------------|--------------------------------------------------
+   Display                                           | Geist (Vercel)                                   | Variable                                         | Ultra-clean, modern, futuristic
+   Body                                              | Geist Sans                                       | Variable                                         | Matching body font
+   Mono                                              | Geist Mono                                       | Variable                                         | Matching monospace
+
+  ### Analysis for This Project
+
+  The project concept is "Living Language" — sign language is warm, organic, human. The display font needs to convey life and warmth, not cold techiness.
+  • Fraunces is perfect for the display role — it's organic, has beautiful italics, and conveys warmth
+  • DM Sans is a great body font — clean, modern, good readability
+  • JetBrains Mono is solid for code/tags
+
+  However, consider Inter instead of DM Sans for body:
+  • Better variable font support
+  • Slightly better readability at small sizes
+  • More neutral (doesn't compete with Fraunces)
+
+  ### 🏆 FINAL RECOMMENDATION: Fraunces (display) + Inter (body) + JetBrains Mono (code)
+  • Fraunces italic for hero text = memorable, warm, organic
+  • Inter for UI/body = clean, neutral, highly legible
+  • JetBrains Mono for tags/metadata = developer-quality monospace
+  • This pairing balances warmth (Fraunces) with clarity (Inter)
+  ──────
+  ## 6. Video Player
+  ### Comparison Table
+
+   Feature                                | Custom HTML5                           | react-player                           | Vidstack                               | Plyr React
+  ----------------------------------------|----------------------------------------|----------------------------------------|----------------------------------------|----------------------------------------
+   Bundle Size                            | 0 (native)                             | ~25KB                                  | ~35KB+                                 | ~15KB
+   Customization                          | Full control                           | Limited skin                           | Highly customizable                    | Good (CSS-based)
+   Accessibility                          | Manual                                 | Basic                                  | Excellent                              | Good
+   Features                               | Build yourself                         | Multi-source                           | HLS/DASH/captions                      | Core player
+   React Integration                      | Manual refs                            | Component                              | Component + hooks                      | Component
+   Keyboard Shortcuts                     | Manual                                 | Some                                   | Built-in                               | Built-in
+   Maintenance                            | Your responsibility                    | Active                                 | Active                                 | Active
+
+  ### Analysis
+
+  This project needs:
+
+  • Simple .mp4 playback (no HLS/DASH streaming)
+  • Custom UI matching the app's design (glassmorphism, amber accents)
+  • Play/pause, seek, loop, fullscreen
+  • Keyboard shortcuts
+  • Auto-play on load
+  Custom HTML5:
+
+  • Full design control (critical for matching the premium aesthetic)
+  • The HTML5  <video>  API is straightforward for basic controls
+  • ~100-150 lines of code for a complete custom player
+  • No external dependency
+  Vidstack:
+
+  • Most feature-rich, best accessibility
+  • But adds ~35KB for features we won't use
+  • Customization requires learning their theming system
+  react-player:
+
+  • Easy but limited customization
+  • Wrapper around native video — adds abstraction without clear benefit for simple .mp4
+
+  ### 🏆 FINAL RECOMMENDATION: Custom HTML5 Video Player
+
+  • This project requires a premium, bespoke design that matches the glassmorphism aesthetic
+  • A custom player built on  <video>  element gives complete design freedom
+  • The required features (play, pause, seek, loop, fullscreen, keyboard) are ~150 lines of React
+  • No dependency overhead
+  • Better integration with Motion for animations
+  ──────
+  This concludes the frontend technology research report. All recommendations reflect the current state of technologies as of mid-2026.
+
+  [Message from subagent f20b5593-a9c0-4ec5-9903-25e05e9f7acc (Uzbek-Russian Dictionary Researcher)]
+
+   Uzbek-Russian Dictionary & Morphology Research Report
+  ──────
+  ## 1. Slovo RSL Dataset
+  ### Overview
+
+  The Slovo dataset is a large-scale Russian Sign Language (RSL) video dataset created for sign language recognition research.
+
+  Key Facts:
+  • Classes/Signs: ~1,000 distinct signs
+  • Total Videos: ~16,000 video samples
+  • Signers: Multiple signers per sign (diversity)
+  • Video Format: .mp4 files, typically 1-5 seconds
+  • Resolution: Varies (commonly 1920×1080 or 1280×720)
+  • Organization: Typically organized by class folder or class ID
+  ### File Naming Convention
+
+  The Slovo dataset typically uses a class ID + sample ID naming scheme:
+
+  • Files may be organized as  {class_label}/{sample_id}.mp4  or  {class_id}_{sample_id}.mp4
+  • The class labels are Russian words/phrases
+  • Example folder structure:
+    привет/001.mp4
+    привет/002.mp4
+    спасибо/001.mp4
+
+
+  ### Known Word Categories in Slovo
+  Based on research, the Slovo dataset covers these categories:
+  Everyday/Greetings:
+  привет (hello), здравствуйте (formal hello), пока (bye), до свидания (goodbye), спасибо (thank you), пожалуйста (please), извините (excuse me), прости (sorry)
+  Pronouns:
+  я (I), ты (you), он (he), она (she), мы (we), вы (you formal/plural), они (they)
+  Numbers:
+  один (1), два (2), три (3), четыре (4), пять (5), шесть (6), семь (7), восемь (8), девять (9), десять (10), и далее...
+
+  Family:
+  мама (mother), папа (father), брат (brother), сестра (sister), ребёнок (child), семья (family), дедушка (grandfather), бабушка (grandmother), муж (husband), жена (wife), сын (son), дочь (daughter)
+  Common Verbs:
+  идти (go), приходить (come), есть (eat), пить (drink), читать (read), писать (write), говорить (speak), слушать (listen), смотреть (look/watch), знать (know), хотеть (want), мочь (can), делать (do/make),
+  работать (work), учиться (study), играть (play), любить (love), помогать (help), давать (give), брать (take), жить (live), спать (sleep), видеть (see), слышать (hear), понимать (understand), думать
+  (think), ждать (wait), купить (buy)
+  Question Words:
+  что (what), кто (who), где (where), когда (when), как (how), почему (why), сколько (how much/many), какой (which/what kind)
+  Colors:
+  красный (red), синий (blue), зелёный (green), жёлтый (yellow), белый (white), чёрный (black), оранжевый (orange)
+
+  Time:
+  сегодня (today), завтра (tomorrow), вчера (yesterday), сейчас (now), утро (morning), день (day/afternoon), вечер (evening), ночь (night), неделя (week), месяц (month), год (year)
+  Common Nouns:
+  дом (house), школа (school), вода (water), еда (food), книга (book), город (city), страна (country), друг (friend), врач (doctor), учитель (teacher), работа (work/job), машина (car), телефон (phone),
+  деньги (money), магазин (store), больница (hospital), улица (street)
+  Adjectives:
+  большой (big), маленький (small), хороший (good), плохой (bad), новый (new), старый (old), красивый (beautiful), горячий (hot), холодный (cold), быстрый (fast), медленный (slow), сильный (strong)
+  Emotions/States:
+  счастливый (happy), грустный (sad), злой (angry), радостный (joyful), хорошо (well/good), плохо (bad), спокойный (calm), уставший (tired), больной (sick), здоровый (healthy)
+  ──────
+  ## 2. Uzbek → Russian Word Mapping (200+ words)
+
+  ### Greeting / Salomlashish (10)
+
+   Uzbek                                                              | Russian                                                           | Category
+  --------------------------------------------------------------------|-------------------------------------------------------------------|-------------------------------------------------------------------
+   salom                                                              | привет                                                            | greeting
+   assalomu alaykum                                                   | здравствуйте                                                      | greeting
+   xayr                                                               | пока                                                              | greeting
+   hayr                                                               | пока                                                              | greeting
+   ko'rishguncha                                                      | до свидания                                                       | greeting
+   xush kelibsiz                                                      | добро пожаловать                                                  | greeting
+   yaxshi kun                                                         | добрый день                                                       | greeting
+   xayrli kech                                                        | добрый вечер                                                      | greeting
+   xayrli tun                                                         | спокойной ночи                                                    | greeting
+   salomlashish                                                       | приветствие                                                       | greeting
+
+  ### Polite / Odob (8)
+
+   Uzbek                                                              | Russian                                                           | Category
+  --------------------------------------------------------------------|-------------------------------------------------------------------|-------------------------------------------------------------------
+   rahmat                                                             | спасибо                                                           | polite
+   katta rahmat                                                       | большое спасибо                                                   | polite
+   iltimos                                                            | пожалуйста                                                        | polite
+   kechirasiz                                                         | извините                                                          | polite
+   uzr                                                                | прости                                                            | polite
+   marhamat                                                           | пожалуйста (offering)                                             | polite
+   yaxshi                                                             | хорошо                                                            | polite
+   albatta                                                            | конечно                                                           | polite
+  ### Pronouns / Olmoshlar (12)
+   Uzbek                                                              | Russian                                                           | Category
+  --------------------------------------------------------------------|-------------------------------------------------------------------|-------------------------------------------------------------------
+   men                                                                | я                                                                 | pronoun
+   sen                                                                | ты                                                                | pronoun
+   u                                                                  | он                                                                | pronoun
+   biz                                                                | мы                                                                | pronoun
+   siz                                                                | вы                                                                | pronoun
+   ular                                                               | они                                                               | pronoun
+   bu                                                                 | это                                                               | pronoun
+   o'sha                                                              | тот                                                               | pronoun
+   kim                                                                | кто                                                               | pronoun
+   nima                                                               | что                                                               | pronoun
+   hamma                                                              | все                                                               | pronoun
+   o'zi                                                               | сам                                                               | pronoun
+  ### Question Words / Savol so'zlari (10)
+   Uzbek                                                              | Russian                                                           | Category
+  --------------------------------------------------------------------|-------------------------------------------------------------------|-------------------------------------------------------------------
+   nima                                                               | что                                                               | question
+   kim                                                                | кто                                                               | question
+   qayerda                                                            | где                                                               | question
+   qachon                                                             | когда                                                             | question
+   qanday                                                             | как                                                               | question
+   necha                                                              | сколько                                                           | question
+   nega                                                               | почему                                                            | question
+   qaysi                                                              | какой                                                             | question
+   qayer                                                              | куда                                                              | question
+   qancha                                                             | сколько                                                           | question
+  ### Family / Oila (16)
+
+   Uzbek                                                              | Russian                                                           | Category
+  --------------------------------------------------------------------|-------------------------------------------------------------------|-------------------------------------------------------------------
+   ona                                                                | мама                                                              | family
+   ota                                                                | папа                                                              | family
+   aka                                                                | брат                                                              | family
+   opa                                                                | сестра                                                            | family
+   bola                                                               | ребёнок                                                           | family
+   oila                                                               | семья                                                             | family
+   buva                                                               | дедушка                                                           | family
+   buvi                                                               | бабушка                                                           | family
+   er                                                                 | муж                                                               | family
+   xotin                                                              | жена                                                              | family
+   o'g'il                                                             | сын                                                               | family
+   qiz                                                                | дочь                                                              | family
+   bola                                                               | ребёнок                                                           | family
+   amaki                                                              | дядя                                                              | family
+   xola                                                               | тётя                                                              | family
+   jiyan                                                              | племянник                                                         | family
+  ### Numbers / Raqamlar (20)
+   Uzbek                                                              | Russian                                                           | Category
+  --------------------------------------------------------------------|-------------------------------------------------------------------|-------------------------------------------------------------------
+   bir                                                                | один                                                              | number
+   ikki                                                               | два                                                               | number
+   uch                                                                | три                                                               | number
+   to'rt                                                              | четыре                                                            | number
+   besh                                                               | пять                                                              | number
+   olti                                                               | шесть                                                             | number
+   yetti                                                              | семь                                                              | number
+   sakkiz                                                             | восемь                                                            | number
+   to'qqiz                                                            | девять                                                            | number
+   o'n                                                                | десять                                                            | number
+   o'n bir                                                            | одиннадцать                                                       | number
+   o'n ikki                                                           | двенадцать                                                        | number
+   o'n uch                                                            | тринадцать                                                        | number
+   o'n to'rt                                                          | четырнадцать                                                      | number
+   o'n besh                                                           | пятнадцать                                                        | number
+   o'n olti                                                           | шестнадцать                                                       | number
+   o'n yetti                                                          | семнадцать                                                        | number
+   o'n sakkiz                                                         | восемнадцать                                                      | number
+   o'n to'qqiz                                                        | девятнадцать                                                      | number
+   yigirma                                                            | двадцать                                                          | number
+  ### Colors / Ranglar (10)
+   Uzbek                                                              | Russian                                                           | Category
+  --------------------------------------------------------------------|-------------------------------------------------------------------|-------------------------------------------------------------------
+   qizil                                                              | красный                                                           | color
+   ko'k                                                               | синий                                                             | color
+   yashil                                                             | зелёный                                                           | color
+   sariq                                                              | жёлтый                                                            | color
+   oq                                                                 | белый                                                             | color
+   qora                                                               | чёрный                                                            | color
+   pushti                                                             | розовый                                                           | color
+   jigarrang                                                          | коричневый                                                        | color
+   to'q sariq                                                         | оранжевый                                                         | color
+   kulrang                                                            | серый                                                             | color
+  ### Actions / Harakatlar (35)
+   Uzbek                                                              | Russian                                                           | Category
+  --------------------------------------------------------------------|-------------------------------------------------------------------|-------------------------------------------------------------------
+   bormoq                                                             | идти                                                              | action
+   kelmoq                                                             | приходить                                                         | action
+   yemoq                                                              | есть                                                              | action
+   ichmoq                                                             | пить                                                              | action
+   o'qimoq                                                            | читать                                                            | action
+   yozmoq                                                             | писать                                                            | action
+   gapirmoq                                                           | говорить                                                          | action
+   tinglamoq                                                          | слушать                                                           | action
+   ko'rmoq                                                            | смотреть                                                          | action
+   bilmoq                                                             | знать                                                             | action
+   xohlamoq                                                           | хотеть                                                            | action
+   qilmoq                                                             | делать                                                            | action
+   ishlamoq                                                           | работать                                                          | action
+   o'qimoq                                                            | учиться                                                           | action
+   o'ynamoq                                                           | играть                                                            | action
+   sevmoq                                                             | любить                                                            | action
+   yordam bermoq                                                      | помогать                                                          | action
+   bermoq                                                             | давать                                                            | action
+   olmoq                                                              | брать                                                             | action
+   yashamoq                                                           | жить                                                              | action
+   uxlamoq                                                            | спать                                                             | action
+   turmoq                                                             | стоять                                                            | action
+   o'tirmoq                                                           | сидеть                                                            | action
+   yugurmoq                                                           | бежать                                                            | action
+   kutmoq                                                             | ждать                                                             | action
+   sotib olmoq                                                        | купить                                                            | action
+   tushunmoq                                                          | понимать                                                          | action
+   o'ylamoq                                                           | думать                                                            | action
+   eslamoq                                                            | помнить                                                           | action
+   unutmoq                                                            | забыть                                                            | action
+   ochmoq                                                             | открыть                                                           | action
+   yopmoq                                                             | закрыть                                                           | action
+   boshlamoq                                                          | начать                                                            | action
+   tugatmoq                                                           | закончить                                                         | action
+   ko'chmoq                                                           | переехать                                                         | action
+  ### Emotions / His-tuyg'ular (14)
+   Uzbek                                                              | Russian                                                           | Category
+  --------------------------------------------------------------------|-------------------------------------------------------------------|-------------------------------------------------------------------
+   baxtli                                                             | счастливый                                                        | emotion
+   xursand                                                            | радостный                                                         | emotion
+   qayg'uli                                                           | грустный                                                          | emotion
+   g'azablangan                                                       | злой                                                              | emotion
+   xavotirli                                                          | тревожный                                                         | emotion
+   yaxshi                                                             | хорошо                                                            | emotion
+   yomon                                                              | плохо                                                             | emotion
+   tinch                                                              | спокойный                                                         | emotion
+   charchagan                                                         | уставший                                                          | emotion
+   kasal                                                              | больной                                                           | emotion
+   sog'lom                                                            | здоровый                                                          | emotion
+   hayron                                                             | удивлённый                                                        | emotion
+   qo'rqinchli                                                        | страшный                                                          | emotion
+   xafa                                                               | обиженный                                                         | emotion
+  ### Time / Vaqt (16)
+   Uzbek                                                              | Russian                                                           | Category
+  --------------------------------------------------------------------|-------------------------------------------------------------------|-------------------------------------------------------------------
+   bugun                                                              | сегодня                                                           | time
+   ertaga                                                             | завтра                                                            | time
+   kecha                                                              | вчера                                                             | time
+   hozir                                                              | сейчас                                                            | time
+   ertalab                                                            | утром                                                             | time
+   tushlik                                                            | обед                                                              | time
+   kechqurun                                                          | вечером                                                           | time
+   tun                                                                | ночь                                                              | time
+   hafta                                                              | неделя                                                            | time
+   oy                                                                 | месяц                                                             | time
+   yil                                                                | год                                                               | time
+   soat                                                               | час                                                               | time
+   daqiqa                                                             | минута                                                            | time
+   doim                                                               | всегда                                                            | time
+   hech qachon                                                        | никогда                                                           | time
+   tez                                                                | скоро                                                             | time
+  ### Common Nouns / Otlar (30)
+   Uzbek                                                              | Russian                                                           | Category
+  --------------------------------------------------------------------|-------------------------------------------------------------------|-------------------------------------------------------------------
+   uy                                                                 | дом                                                               | object
+   maktab                                                             | школа                                                             | object
+   suv                                                                | вода                                                              | object
+   ovqat                                                              | еда                                                               | object
+   kitob                                                              | книга                                                             | object
+   shahar                                                             | город                                                             | object
+   mamlakat                                                           | страна                                                            | object
+   do'st                                                              | друг                                                              | object
+   shifokor                                                           | врач                                                              | object
+   o'qituvchi                                                         | учитель                                                           | object
+   ish                                                                | работа                                                            | object
+   mashina                                                            | машина                                                            | object
+   telefon                                                            | телефон                                                           | object
+   pul                                                                | деньги                                                            | object
+   do'kon                                                             | магазин                                                           | object
+   kasalxona                                                          | больница                                                          | object
+   ko'cha                                                             | улица                                                             | object
+   park                                                               | парк                                                              | object
+   odam                                                               | человек                                                           | object
+   er                                                                 | мужчина                                                           | object
+   ayol                                                               | женщина                                                           | object
+   non                                                                | хлеб                                                              | object
+   sut                                                                | молоко                                                            | object
+   meva                                                               | фрукт                                                             | object
+   sabzavot                                                           | овощ                                                              | object
+   kiyim                                                              | одежда                                                            | object
+   poyabzal                                                           | обувь                                                             | object
+   stol                                                               | стол                                                              | object
+   stul                                                               | стул                                                              | object
+   deraza                                                             | окно                                                              | object
+  ### Adjectives / Sifatlar (20)
+
+   Uzbek                                                              | Russian                                                           | Category
+  --------------------------------------------------------------------|-------------------------------------------------------------------|-------------------------------------------------------------------
+   katta                                                              | большой                                                           | adjective
+   kichik                                                             | маленький                                                         | adjective
+   yaxshi                                                             | хороший                                                           | adjective
+   yomon                                                              | плохой                                                            | adjective
+   yangi                                                              | новый                                                             | adjective
+   eski                                                               | старый                                                            | adjective
+   chiroyli                                                           | красивый                                                          | adjective
+   issiq                                                              | горячий                                                           | adjective
+   sovuq                                                              | холодный                                                          | adjective
+   tez                                                                | быстрый                                                           | adjective
+   sekin                                                              | медленный                                                         | adjective
+   kuchli                                                             | сильный                                                           | adjective
+   uzun                                                               | длинный                                                           | adjective
+   kalta                                                              | короткий                                                          | adjective
+   og'ir                                                              | тяжёлый                                                           | adjective
+   yengil                                                             | лёгкий                                                            | adjective
+   to'g'ri                                                            | правильный                                                        | adjective
+   noto'g'ri                                                          | неправильный                                                      | adjective
+   muhim                                                              | важный                                                            | adjective
+   oson                                                               | лёгкий (easy)                                                     | adjective
+  ### Basic / Asosiy (8)
+
+   Uzbek                                                              | Russian                                                           | Category
+  --------------------------------------------------------------------|-------------------------------------------------------------------|-------------------------------------------------------------------
+   ha                                                                 | да                                                                | basic
+   yo'q                                                               | нет                                                               | basic
+   bor                                                                | есть (have)                                                       | basic
+   kerak                                                              | нужно                                                             | basic
+   mumkin                                                             | можно                                                             | basic
+   shart                                                              | обязательно                                                       | basic
+   balki                                                              | может быть                                                        | basic
+   faqat                                                              | только                                                            | basic
+  Total: ~209 words
+  ──────
+  ## 3. Uzbek Morphological Suffixes
+  ### Noun Suffixes
+
+  Plural:
+   Suffix                                                             | Example                                                           | Meaning
+  --------------------------------------------------------------------|-------------------------------------------------------------------|-------------------------------------------------------------------
+   -lar                                                               | bolalar                                                           | children
+   -lar                                                               | kitoblar                                                          | books
+
+  Cases (kelishik):
+   Suffix                                            | Case                                             | Example                                          | Meaning
+  ---------------------------------------------------|--------------------------------------------------|--------------------------------------------------|--------------------------------------------------
+   -ning                                             | Genetive                                         | bolaning                                         | of the child
+   -ni                                               | Accusative                                       | kitobni                                          | the book (obj)
+   -ga                                               | Dative                                           | maktabga                                         | to school
+   -da                                               | Locative                                         | uyda                                             | at home
+   -dan                                              | Ablative                                         | shahardan                                        | from city
+  Possessive (egalik):
+
+   Suffix                                            | Person                                           | Example                                          | Meaning
+  ---------------------------------------------------|--------------------------------------------------|--------------------------------------------------|--------------------------------------------------
+   -im                                               | 1st sg                                           | kitobim                                          | my book
+   -ing                                              | 2nd sg                                           | kitobing                                         | your book
+   -i / -si                                          | 3rd sg                                           | kitobi                                           | his/her book
+   -imiz                                             | 1st pl                                           | kitobimiz                                        | our book
+   -ingiz                                            | 2nd pl                                           | kitobingiz                                       | your (pl) book
+   -lari                                             | 3rd pl                                           | kitoblari                                        | their book
+  ### Verb Suffixes
+
+  Tenses:
+
+   Suffix                                            | Tense                                            | Example                                          | Meaning
+  ---------------------------------------------------|--------------------------------------------------|--------------------------------------------------|--------------------------------------------------
+   -moqda                                            | Present continuous                               | kelmoqda                                         | is coming
+   -yotir / -yotgan                                  | Present continuous                               | kelyotir                                         | is coming
+   -adi / -ydi                                       | Present/future habitual                          | keladi                                           | comes/will come
+   -di                                               | Past definite                                    | keldi                                            | came
+   -gan                                              | Past indefinite                                  | kelgan                                           | (has) come
+   -ar / -r                                          | Future                                           | kelar                                            | will come
+   -moqchi                                           | Intentive                                        | kelmoqchi                                        | intends to come
+
+  Person markers:
+
+   Suffix                                                             | Person                                                            | Example
+  --------------------------------------------------------------------|-------------------------------------------------------------------|-------------------------------------------------------------------
+   -man                                                               | 1st sg                                                            | boraman
+   -san                                                               | 2nd sg                                                            | borasan
+   -(none/-di)                                                        | 3rd sg                                                            | boradi
+   -miz                                                               | 1st pl                                                            | boramiz
+   -siz                                                               | 2nd pl                                                            | borasiz
+   -lar                                                               | 3rd pl                                                            | boradilar
+
+  Mood/Aspect:
+
+   Suffix                                            | Type                                             | Example                                          | Meaning
+  ---------------------------------------------------|--------------------------------------------------|--------------------------------------------------|--------------------------------------------------
+   -ish                                              | Verbal noun                                      | borish                                           | going
+   -ma/-mas                                          | Negative                                         | borma/bormas                                     | don't go
+   -sin                                              | Imperative 3rd                                   | borsin                                           | let him go
+   -ing                                              | Imperative 2nd                                   | boring                                           | go!
+   -aylik                                            | Hortative                                        | boraylik                                         | let's go
+
+  ### Adjective Suffixes
+
+   Suffix                                            | Type                                             | Example                                          | Meaning
+  ---------------------------------------------------|--------------------------------------------------|--------------------------------------------------|--------------------------------------------------
+   -li                                               | Having                                           | kuchli                                           | strong (having strength)
+   -siz                                              | Without                                          | kuchsiz                                          | weak (without strength)
+   -lik                                              | Abstract noun                                    | yaxshilik                                        | goodness
+   -roq                                              | Comparative                                      | kattaroq                                         | bigger
+   -gina                                             | Diminutive                                       | kichikgina                                       | tiny
+
+  ### Complete Suffix List for Dictionary Stripping
+
+  These suffixes should be stripped (ordered from longest to shortest for correct matching):
+
+    Longest first (to prevent partial matches):
+    "moqda", "yotir", "yotgan", "moqchi", "aylik",
+    "ingiz", "imiz", "lari", "miz", "lar",
+    "ning", "gan", "dan", "adi", "ydi",
+    "lik", "siz", "roq", "man", "san",
+    "sin", "ish", "chi", "da", "ga",
+    "ni", "li", "di", "ar", "im",
+    "ng", "in", "si", "i"
+
+  Important Notes on Stripping:
+
+  1. Always try longest suffix first to avoid incorrect matches
+  2. After stripping, verify the stem exists in the dictionary
+  3. Some words may need multiple suffix removals (e.g., "bolalarning" → "bolalar" → "bola")
+  4. Be careful with short stems (e.g., stripping "-lar" from "salom" would be wrong because "salom" doesn't end with "lar" — always check!)
+  5. Consider a minimum stem length (e.g., at least 2 characters) to prevent false matches
+  ──────
+  This concludes the Uzbek-Russian dictionary and morphology research. The 209 words cover the most essential vocabulary for a sign language translation demo.
+
+  All three research reports are in. Now I have comprehensive data to build the new prompt. Let me write the complete, professional prompt system.
