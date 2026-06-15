@@ -1,0 +1,134 @@
+r2_key,public_url,uzbek_word,russian_gloss
+signs/greeting/salom.mp4,,salom,привет
+signs/greeting/xayr.mp4,,xayr,пока
+signs/greeting/hayr.mp4,,hayr,пока
+signs/greeting/xush_kelibsiz.mp4,,xush kelibsiz,добро пожаловать
+signs/polite/albatta.mp4,,albatta,конечно
+signs/pronoun/men.mp4,,men,я
+signs/pronoun/sen.mp4,,sen,ты
+signs/pronoun/biz.mp4,,biz,мы
+signs/pronoun/siz.mp4,,siz,вы
+signs/pronoun/bu.mp4,,bu,это
+signs/pronoun/osha.mp4,,o'sha,тот
+signs/pronoun/hamma.mp4,,hamma,все
+signs/question/nima.mp4,,nima,что
+signs/question/kim.mp4,,kim,кто
+signs/question/qachon.mp4,,qachon,когда
+signs/question/necha.mp4,,necha,сколько
+signs/question/nega.mp4,,nega,почему
+signs/question/qancha.mp4,,qancha,сколько
+signs/family/aka.mp4,,aka,брат
+signs/family/opa.mp4,,opa,сестра
+signs/family/bola.mp4,,bola,ребёнок
+signs/family/oila.mp4,,oila,семья
+signs/family/er.mp4,,er,муж
+signs/family/xotin.mp4,,xotin,жена
+signs/family/ogil.mp4,,o'g'il,сын
+signs/family/qiz.mp4,,qiz,дочь
+signs/number/bir.mp4,,bir,один
+signs/number/ikki.mp4,,ikki,два
+signs/number/uch.mp4,,uch,три
+signs/number/tort.mp4,,to'rt,четыре
+signs/number/besh.mp4,,besh,пять
+signs/number/olti.mp4,,olti,шесть
+signs/number/yetti.mp4,,yetti,семь
+signs/number/sakkiz.mp4,,sakkiz,восемь
+signs/number/toqqiz.mp4,,to'qqiz,девять
+signs/number/on.mp4,,o'n,десять
+signs/number/on_bir.mp4,,o'n bir,одиннадцать
+signs/number/on_ikki.mp4,,o'n ikki,двенадцать
+signs/number/on_uch.mp4,,o'n uch,тринадцать
+signs/number/on_tort.mp4,,o'n to'rt,четырнадцать
+signs/number/on_besh.mp4,,o'n besh,пятнадцать
+signs/number/on_olti.mp4,,o'n olti,шестнадцать
+signs/number/on_yetti.mp4,,o'n yetti,семнадцать
+signs/number/on_sakkiz.mp4,,o'n sakkiz,восемнадцать
+signs/number/on_toqqiz.mp4,,o'n to'qqiz,девятнадцать
+signs/number/yigirma.mp4,,yigirma,двадцать
+signs/color/qizil.mp4,,qizil,красный
+signs/color/kok.mp4,,ko'k,синий
+signs/color/yashil.mp4,,yashil,зелёный
+signs/color/sariq.mp4,,sariq,жёлтый
+signs/color/oq.mp4,,oq,белый
+signs/color/qora.mp4,,qora,чёрный
+signs/color/pushti.mp4,,pushti,розовый
+signs/color/jigarrang.mp4,,jigarrang,коричневый
+signs/color/toq_sariq.mp4,,to'q sariq,оранжевый
+signs/color/kulrang.mp4,,kulrang,серый
+signs/action/bormoq.mp4,,bormoq,идти
+signs/action/yemoq.mp4,,yemoq,есть
+signs/action/ichmoq.mp4,,ichmoq,пить
+signs/action/oqimoq.mp4,,o'qimoq,читать
+signs/action/yozmoq.mp4,,yozmoq,писать
+signs/action/gapirmoq.mp4,,gapirmoq,говорить
+signs/action/tinglamoq.mp4,,tinglamoq,слушать
+signs/action/kormoq.mp4,,ko'rmoq,смотреть
+signs/action/bilmoq.mp4,,bilmoq,знать
+signs/action/xohlamoq.mp4,,xohlamoq,хотеть
+signs/action/qilmoq.mp4,,qilmoq,делать
+signs/action/ishlamoq.mp4,,ishlamoq,работать
+signs/action/oynamoq.mp4,,o'ynamoq,играть
+signs/action/sevmoq.mp4,,sevmoq,любить
+signs/action/yashamoq.mp4,,yashamoq,жить
+signs/action/uxlamoq.mp4,,uxlamoq,спать
+signs/action/turmoq.mp4,,turmoq,стоять
+signs/action/kutmoq.mp4,,kutmoq,ждать
+signs/action/sotib_olmoq.mp4,,sotib olmoq,купить
+signs/action/oylamoq.mp4,,o'ylamoq,думать
+signs/action/unutmoq.mp4,,unutmoq,забыть
+signs/action/ochmoq.mp4,,ochmoq,открыть
+signs/action/yopmoq.mp4,,yopmoq,закрыть
+signs/action/boshlamoq.mp4,,boshlamoq,начать
+signs/action/tugatmoq.mp4,,tugatmoq,закончить
+signs/emotion/baxtli.mp4,,baxtli,счастливый
+signs/emotion/xursand.mp4,,xursand,радостный
+signs/emotion/qayguli.mp4,,qayg'uli,грустный
+signs/emotion/gazablangan.mp4,,g'azablangan,злой
+signs/emotion/yaxshi.mp4,,yaxshi,хорошо
+signs/emotion/yomon.mp4,,yomon,плохо
+signs/emotion/tinch.mp4,,tinch,спокойный
+signs/emotion/qorqinchli.mp4,,qo'rqinchli,страшный
+signs/time/bugun.mp4,,bugun,сегодня
+signs/time/ertaga.mp4,,ertaga,завтра
+signs/time/kecha.mp4,,kecha,вчера
+signs/time/tun.mp4,,tun,ночь
+signs/time/hafta.mp4,,hafta,неделя
+signs/time/oy.mp4,,oy,месяц
+signs/time/yil.mp4,,yil,год
+signs/time/soat.mp4,,soat,час
+signs/time/daqiqa.mp4,,daqiqa,минута
+signs/time/doim.mp4,,doim,всегда
+signs/time/hech_qachon.mp4,,hech qachon,никогда
+signs/object/uy.mp4,,uy,дом
+signs/object/maktab.mp4,,maktab,школа
+signs/object/suv.mp4,,suv,вода
+signs/object/ovqat.mp4,,ovqat,еда
+signs/object/kitob.mp4,,kitob,книга
+signs/object/shahar.mp4,,shahar,город
+signs/object/dost.mp4,,do'st,друг
+signs/object/pul.mp4,,pul,деньги
+signs/object/dokon.mp4,,do'kon,магазин
+signs/object/kocha.mp4,,ko'cha,улица
+signs/object/odam.mp4,,odam,человек
+signs/object/erkak.mp4,,erkak,мужчина
+signs/object/ayol.mp4,,ayol,женщина
+signs/object/non.mp4,,non,хлеб
+signs/object/kiyim.mp4,,kiyim,одежда
+signs/adjective/katta.mp4,,katta,большой
+signs/adjective/kichik.mp4,,kichik,маленький
+signs/adjective/yangi.mp4,,yangi,новый
+signs/adjective/eski.mp4,,eski,старый
+signs/adjective/chiroyli.mp4,,chiroyli,красивый
+signs/adjective/sovuq.mp4,,sovuq,холодный
+signs/adjective/tez.mp4,,tez,быстрый
+signs/adjective/sekin.mp4,,sekin,медленный
+signs/adjective/kuchli.mp4,,kuchli,сильный
+signs/adjective/uzun.mp4,,uzun,длинный
+signs/adjective/kalta.mp4,,kalta,короткий
+signs/adjective/ogir.mp4,,og'ir,тяжёлый
+signs/adjective/yengil.mp4,,yengil,лёгкий
+signs/adjective/muhim.mp4,,muhim,важный
+signs/adjective/oson.mp4,,oson,лёгкий
+signs/basic/ha.mp4,,ha,да
+signs/basic/bor.mp4,,bor,есть
+signs/basic/faqat.mp4,,faqat,только

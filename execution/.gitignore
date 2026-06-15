@@ -1,0 +1,30 @@
+# Secrets / environment
+.env
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+*.log
+
+# Node / Vite (Part 05)
+node_modules/
+dist/
+.vite/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# FFmpeg scratch (never source-of-truth; deleted per job in Part 04)
+scratch/
+*.tmp.mp4
+
+# Staged clip extracts (large binaries staged for R2 upload; the plan and
+# upload manifest CSVs under clips/ are kept, the video tree is not)
+clips/signs/

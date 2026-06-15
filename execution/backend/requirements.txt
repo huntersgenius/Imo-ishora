@@ -1,0 +1,18 @@
+# IMO-ISHORA backend dependencies.
+#
+# NOTE: The framework-free domain core (services: text_processing, dictionary,
+# jobs, r2, synthesis, video, errors, presentation) and configuration
+# (core.settings) are standard-library only and require NONE of the packages
+# below. These are pinned for the HTTP edge (api/, schemas/, main.py) and R2.
+#
+# COMPATIBILITY: pydantic v2 needs a prebuilt pydantic-core wheel. Use a release
+# CPython (3.11–3.13) to run the API server. Python 3.15 alphas have no wheel.
+#
+# Versions are pinned to the lines selected in main_prompt.md / source.md.
+
+fastapi==0.115.*        # Part 03 — typed async API, Pydantic v2 aligned
+uvicorn[standard]==0.34.*  # Part 03 — ASGI server for local + demo serving
+pydantic==2.*           # Part 03 — request/response validation
+boto3==1.*              # Part 04 — Cloudflare R2 via S3-compatible API
+python-multipart==0.0.* # Part 03 — form handling if needed by upload paths
+httpx==0.28.*           # test client transport for the API edge (and handy for ops)

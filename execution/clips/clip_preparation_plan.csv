@@ -1,0 +1,134 @@
+uzbek_word,russian_gloss,category,r2_key,attachment_id,source_file,trim_start_seconds,trim_duration_seconds,staged_output,status
+salom,привет,greeting,signs/greeting/salom.mp4,f17a6060-6ced-4bd1-9886-8578cfbb864f,,0.0,2.317,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\greeting\salom.mp4,source_missing
+xayr,пока,greeting,signs/greeting/xayr.mp4,c1d0a301-e159-4468-afe5-9d2d757ac8f3,,0.117,2.367,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\greeting\xayr.mp4,source_missing
+hayr,пока,greeting,signs/greeting/hayr.mp4,c1d0a301-e159-4468-afe5-9d2d757ac8f3,,0.117,2.367,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\greeting\hayr.mp4,source_missing
+xush kelibsiz,добро пожаловать,greeting,signs/greeting/xush_kelibsiz.mp4,79e2cc12-2d72-4b12-98d3-13a5112d4ea9,,0.25,3.133,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\greeting\xush_kelibsiz.mp4,source_missing
+albatta,конечно,polite,signs/polite/albatta.mp4,ae70cd19-8571-40b6-960a-2a8d12aac144,,0.417,2.567,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\polite\albatta.mp4,source_missing
+men,я,pronoun,signs/pronoun/men.mp4,17fdf4e2-951f-46ea-9d65-e511502fa610,,0.283,2.467,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\pronoun\men.mp4,source_missing
+sen,ты,pronoun,signs/pronoun/sen.mp4,82b2225c-58b0-4097-a2dc-9bed952134e9,,0.85,2.067,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\pronoun\sen.mp4,source_missing
+biz,мы,pronoun,signs/pronoun/biz.mp4,9669b908-ffba-49c4-ab46-e3e33b42b534,D:\test\9669b908-ffba-49c4-ab46-e3e33b42b534.mp4,0.283,2.3,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\pronoun\biz.mp4,extracted
+siz,вы,pronoun,signs/pronoun/siz.mp4,eb5c55f9-b5f7-4370-bc5f-3109233cd958,D:\test\eb5c55f9-b5f7-4370-bc5f-3109233cd958.mp4,0.917,2.3,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\pronoun\siz.mp4,extracted
+bu,это,pronoun,signs/pronoun/bu.mp4,cb209974-ec25-4864-bf78-86e8b13f6403,,0.95,2.367,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\pronoun\bu.mp4,source_missing
+o'sha,тот,pronoun,signs/pronoun/osha.mp4,3e955c48-1844-4d82-9447-09c001ccb973,,0.0,2.317,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\pronoun\osha.mp4,source_missing
+hamma,все,pronoun,signs/pronoun/hamma.mp4,713b2b6e-fcb1-4032-87d2-a623c498637f,,0.183,2.5,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\pronoun\hamma.mp4,source_missing
+nima,что,question,signs/question/nima.mp4,b3f0b5d4-b3ca-4edd-9cf0-a220918c0fd9,,0.783,2.633,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\question\nima.mp4,source_missing
+kim,кто,question,signs/question/kim.mp4,c19a6f53-0add-489a-a441-be141591965b,,0.0,1.983,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\question\kim.mp4,source_missing
+qachon,когда,question,signs/question/qachon.mp4,0d88084e-e809-4f71-b53d-d9e48b655623,D:\test\0d88084e-e809-4f71-b53d-d9e48b655623.mp4,0.083,2.133,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\question\qachon.mp4,extracted
+necha,сколько,question,signs/question/necha.mp4,89fc8fcf-b23e-4b36-be6a-a96d41b439dd,,0.583,2.533,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\question\necha.mp4,source_missing
+nega,почему,question,signs/question/nega.mp4,781b3db4-b726-42b7-b9c9-aaa2972e932e,,0.983,2.433,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\question\nega.mp4,source_missing
+qancha,сколько,question,signs/question/qancha.mp4,89fc8fcf-b23e-4b36-be6a-a96d41b439dd,,0.583,2.533,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\question\qancha.mp4,source_missing
+aka,брат,family,signs/family/aka.mp4,fed1a5ce-bf89-49cf-9ae8-b1553b694576,,0.0,2.15,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\family\aka.mp4,source_missing
+opa,сестра,family,signs/family/opa.mp4,25ee4a86-14bf-4a43-9352-4ddda47a6bea,,0.25,2.1,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\family\opa.mp4,source_missing
+bola,ребёнок,family,signs/family/bola.mp4,43568c87-f9b3-4d2b-a3c9-17cb566a0064,,0.717,2.933,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\family\bola.mp4,source_missing
+oila,семья,family,signs/family/oila.mp4,703bfdda-0c9a-47a0-b58f-0fdb8fd3d54f,,0.317,2.233,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\family\oila.mp4,source_missing
+er,муж,family,signs/family/er.mp4,ff06a8d0-fb2b-4942-ac84-357eddc254b8,D:\test\ff06a8d0-fb2b-4942-ac84-357eddc254b8.mp4,0.65,2.633,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\family\er.mp4,extracted
+xotin,жена,family,signs/family/xotin.mp4,53282177-4655-4cf7-b7d0-2241adbc53ad,,0.0,2.517,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\family\xotin.mp4,source_missing
+o'g'il,сын,family,signs/family/ogil.mp4,63759dbf-3ebb-4fb2-8568-b92d849293dd,,0.583,2.333,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\family\ogil.mp4,source_missing
+qiz,дочь,family,signs/family/qiz.mp4,dc22a3c5-2114-4415-aebe-5af42693fa04,D:\test\dc22a3c5-2114-4415-aebe-5af42693fa04.mp4,1.517,2.433,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\family\qiz.mp4,extracted
+bir,один,number,signs/number/bir.mp4,b7ef576a-396c-4a2b-b118-0d91fd1bb1be,,1.55,2.5,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\number\bir.mp4,source_missing
+ikki,два,number,signs/number/ikki.mp4,706b7233-bf43-4a35-9de2-f74795bb930e,,0.583,1.867,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\number\ikki.mp4,source_missing
+uch,три,number,signs/number/uch.mp4,35635ec4-ed0b-44e2-ba26-11bfba762933,,0.117,2.133,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\number\uch.mp4,source_missing
+to'rt,четыре,number,signs/number/tort.mp4,9c241716-742b-4da1-9980-4dae550da8dc,D:\test\9c241716-742b-4da1-9980-4dae550da8dc.mp4,1.65,2.433,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\number\tort.mp4,extracted
+besh,пять,number,signs/number/besh.mp4,aef470b7-a1d1-4eab-a76c-e5b72ae9bd6b,,0.317,1.967,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\number\besh.mp4,source_missing
+olti,шесть,number,signs/number/olti.mp4,b6e4b039-4754-4582-8210-e88c0031e735,,0.25,2.2,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\number\olti.mp4,source_missing
+yetti,семь,number,signs/number/yetti.mp4,5da18495-7ec0-46af-9305-8b050e11c380,D:\test\5da18495-7ec0-46af-9305-8b050e11c380.mp4,0.017,2.867,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\number\yetti.mp4,extracted
+sakkiz,восемь,number,signs/number/sakkiz.mp4,aa2a4935-a1bb-4a68-b680-fa690d6f6116,,0.083,2.333,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\number\sakkiz.mp4,source_missing
+to'qqiz,девять,number,signs/number/toqqiz.mp4,05422c51-b254-4198-8c79-5bad498f6e2d,,0.117,2.8,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\number\toqqiz.mp4,source_missing
+o'n,десять,number,signs/number/on.mp4,fb4f22c7-7b96-4dc5-bc63-b2691e6825a1,D:\test\fb4f22c7-7b96-4dc5-bc63-b2691e6825a1.mp4,0.35,2.6,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\number\on.mp4,extracted
+o'n bir,одиннадцать,number,signs/number/on_bir.mp4,e8111bff-cbe9-4528-9d14-75d8e7fe3424,,0.483,2.167,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\number\on_bir.mp4,source_missing
+o'n ikki,двенадцать,number,signs/number/on_ikki.mp4,3f2eb8a4-2dcd-441d-880d-8fd977f24257,,0.0,2.783,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\number\on_ikki.mp4,source_missing
+o'n uch,тринадцать,number,signs/number/on_uch.mp4,d88e0a1d-3eb9-441f-ab95-77412fa5483e,,0.883,3.0,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\number\on_uch.mp4,source_missing
+o'n to'rt,четырнадцать,number,signs/number/on_tort.mp4,3e66690d-caf0-4246-acfa-063dfbc2ced9,,0.717,2.567,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\number\on_tort.mp4,source_missing
+o'n besh,пятнадцать,number,signs/number/on_besh.mp4,b02ecfa1-e559-4bd4-8cd6-777b7213af29,D:\test\b02ecfa1-e559-4bd4-8cd6-777b7213af29.mp4,0.85,2.433,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\number\on_besh.mp4,extracted
+o'n olti,шестнадцать,number,signs/number/on_olti.mp4,7bc026d0-946c-4d9a-872e-3ae2a8d2f08c,,1.183,3.1,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\number\on_olti.mp4,source_missing
+o'n yetti,семнадцать,number,signs/number/on_yetti.mp4,cecc977d-5f95-49c7-aad1-8d471c1c26ca,,0.15,3.033,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\number\on_yetti.mp4,source_missing
+o'n sakkiz,восемнадцать,number,signs/number/on_sakkiz.mp4,2dc7d405-1174-4737-91d2-7eac8e156002,,0.117,3.1,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\number\on_sakkiz.mp4,source_missing
+o'n to'qqiz,девятнадцать,number,signs/number/on_toqqiz.mp4,cdc719cc-2513-4458-883f-aeea7c8030c6,D:\test\cdc719cc-2513-4458-883f-aeea7c8030c6.mp4,0.017,2.7,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\number\on_toqqiz.mp4,extracted
+yigirma,двадцать,number,signs/number/yigirma.mp4,d70eb54a-dac7-45ac-bb0a-4783d587b351,,0.217,2.067,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\number\yigirma.mp4,source_missing
+qizil,красный,color,signs/color/qizil.mp4,352bae17-2ea2-44c4-834f-923672e39ef1,,0.0,1.717,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\color\qizil.mp4,source_missing
+ko'k,синий,color,signs/color/kok.mp4,c0501d51-1dcc-443e-a9ce-bcc368616e05,,0.517,2.267,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\color\kok.mp4,source_missing
+yashil,зелёный,color,signs/color/yashil.mp4,113b6eec-add5-4701-bd1e-1755ee355087,D:\test\113b6eec-add5-4701-bd1e-1755ee355087.mp4,0.45,2.933,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\color\yashil.mp4,extracted
+sariq,жёлтый,color,signs/color/sariq.mp4,ae5414a0-65bc-4c4f-b796-b5482492c8b6,,0.383,2.667,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\color\sariq.mp4,source_missing
+oq,белый,color,signs/color/oq.mp4,fbd6e52b-f734-47d2-b611-3589cbd0abea,D:\test\fbd6e52b-f734-47d2-b611-3589cbd0abea.mp4,0.483,2.067,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\color\oq.mp4,extracted
+qora,чёрный,color,signs/color/qora.mp4,6934e233-8571-42ae-bec0-85c55709eaae,,0.0,2.417,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\color\qora.mp4,source_missing
+pushti,розовый,color,signs/color/pushti.mp4,6ca37d2a-5b86-4e54-b571-36f24dfa0b26,D:\test\6ca37d2a-5b86-4e54-b571-36f24dfa0b26.mp4,0.0,2.217,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\color\pushti.mp4,extracted
+jigarrang,коричневый,color,signs/color/jigarrang.mp4,033b935b-2782-434e-ac40-fc203b789736,,0.383,2.833,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\color\jigarrang.mp4,source_missing
+to'q sariq,оранжевый,color,signs/color/toq_sariq.mp4,3ceaaf50-7b59-4fc9-a2ac-bcd0e358c43d,,0.0,2.383,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\color\toq_sariq.mp4,source_missing
+kulrang,серый,color,signs/color/kulrang.mp4,8580cc1d-1415-49ba-84d3-91e502e24b41,D:\test\8580cc1d-1415-49ba-84d3-91e502e24b41.mp4,0.0,2.183,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\color\kulrang.mp4,extracted
+bormoq,идти,action,signs/action/bormoq.mp4,8fdddf84-b08b-4c0c-9154-4ddcdc28a5c0,,0.65,2.533,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\action\bormoq.mp4,source_missing
+yemoq,есть,action,signs/action/yemoq.mp4,19d28141-2c8d-4c3f-87c6-48aac37cf936,,1.183,2.1,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\action\yemoq.mp4,source_missing
+ichmoq,пить,action,signs/action/ichmoq.mp4,399dc194-4744-4d16-8c61-20a94fa09a48,D:\test\399dc194-4744-4d16-8c61-20a94fa09a48.mp4,0.983,1.967,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\action\ichmoq.mp4,extracted
+o'qimoq,читать,action,signs/action/oqimoq.mp4,b844a56e-d1a1-4924-a4c4-cf4fd3b3351f,,0.85,2.333,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\action\oqimoq.mp4,source_missing
+yozmoq,писать,action,signs/action/yozmoq.mp4,9766be96-1004-4a2e-a4a7-846a2ef07b24,,0.617,1.933,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\action\yozmoq.mp4,source_missing
+gapirmoq,говорить,action,signs/action/gapirmoq.mp4,b70050e8-1ff8-4ea9-a7aa-84dd68618755,,0.617,2.133,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\action\gapirmoq.mp4,source_missing
+tinglamoq,слушать,action,signs/action/tinglamoq.mp4,bdb55596-da5e-4cc2-b4ca-8b87cfff2908,D:\test\bdb55596-da5e-4cc2-b4ca-8b87cfff2908.mp4,0.483,2.3,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\action\tinglamoq.mp4,extracted
+ko'rmoq,смотреть,action,signs/action/kormoq.mp4,3a0110cd-fc7e-4dab-88f6-9973d724cdf8,,0.65,2.233,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\action\kormoq.mp4,source_missing
+bilmoq,знать,action,signs/action/bilmoq.mp4,4e97a5bb-5bf3-4a34-a927-f1fdfb1525c2,,0.883,2.4,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\action\bilmoq.mp4,source_missing
+xohlamoq,хотеть,action,signs/action/xohlamoq.mp4,ba0141c9-51fa-4967-8a09-14755a78ce76,D:\test\ba0141c9-51fa-4967-8a09-14755a78ce76.mp4,1.183,2.333,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\action\xohlamoq.mp4,extracted
+qilmoq,делать,action,signs/action/qilmoq.mp4,c6d42058-ffe6-44ce-bdf4-f6b230a861f9,,0.85,2.6,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\action\qilmoq.mp4,source_missing
+ishlamoq,работать,action,signs/action/ishlamoq.mp4,5a41c4a8-ccbe-48be-a6fd-e42444d1a5e0,,0.817,2.333,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\action\ishlamoq.mp4,source_missing
+o'ynamoq,играть,action,signs/action/oynamoq.mp4,eba1da58-aff0-4694-8a6c-f4a77f179ab7,,0.583,2.767,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\action\oynamoq.mp4,source_missing
+sevmoq,любить,action,signs/action/sevmoq.mp4,c51c70c9-cff4-4b15-a1a7-3bd58266d034,D:\test\c51c70c9-cff4-4b15-a1a7-3bd58266d034.mp4,0.317,2.133,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\action\sevmoq.mp4,extracted
+yashamoq,жить,action,signs/action/yashamoq.mp4,ab343e7d-0248-46ff-abed-7398e80b900f,,0.017,2.333,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\action\yashamoq.mp4,source_missing
+uxlamoq,спать,action,signs/action/uxlamoq.mp4,a4adf8d4-218a-4665-aead-7ea3e32e4d7a,,0.183,2.833,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\action\uxlamoq.mp4,source_missing
+turmoq,стоять,action,signs/action/turmoq.mp4,8fe2c357-25d6-49b7-a416-9ad93656ba00,,0.283,2.467,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\action\turmoq.mp4,source_missing
+kutmoq,ждать,action,signs/action/kutmoq.mp4,d6661723-c09f-4d90-8d1c-612d673e7a82,,0.417,2.3,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\action\kutmoq.mp4,source_missing
+sotib olmoq,купить,action,signs/action/sotib_olmoq.mp4,dffe879a-eac8-4676-b1ab-2114f1e0f0da,,0.0,2.017,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\action\sotib_olmoq.mp4,source_missing
+o'ylamoq,думать,action,signs/action/oylamoq.mp4,187ad025-5899-4371-858e-b42f6ac9cf7d,D:\test\187ad025-5899-4371-858e-b42f6ac9cf7d.mp4,0.25,2.7,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\action\oylamoq.mp4,extracted
+unutmoq,забыть,action,signs/action/unutmoq.mp4,90c8c2b9-5d66-4bf2-8617-b5044c89c1c9,,0.45,2.233,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\action\unutmoq.mp4,source_missing
+ochmoq,открыть,action,signs/action/ochmoq.mp4,ebed3256-860b-4192-b07a-398d79ad79f9,,0.283,2.9,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\action\ochmoq.mp4,source_missing
+yopmoq,закрыть,action,signs/action/yopmoq.mp4,47a0e83f-4864-4c19-9fec-9511639f25d5,,0.117,2.433,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\action\yopmoq.mp4,source_missing
+boshlamoq,начать,action,signs/action/boshlamoq.mp4,00af7ae9-fdb5-4416-8ba1-980b5880528c,,0.383,2.567,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\action\boshlamoq.mp4,source_missing
+tugatmoq,закончить,action,signs/action/tugatmoq.mp4,32475b40-3c50-41e3-a902-6919ddadb210,,0.45,2.6,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\action\tugatmoq.mp4,source_missing
+baxtli,счастливый,emotion,signs/emotion/baxtli.mp4,d29f98f1-9fc4-4254-8044-d1ed17c08169,,0.417,2.4,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\emotion\baxtli.mp4,source_missing
+xursand,радостный,emotion,signs/emotion/xursand.mp4,ede73131-805e-496e-99d6-0eaf22b85548,,0.583,2.033,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\emotion\xursand.mp4,source_missing
+qayg'uli,грустный,emotion,signs/emotion/qayguli.mp4,05b60662-4fa6-4566-bf7d-03df29e098f0,,0.383,2.433,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\emotion\qayguli.mp4,source_missing
+g'azablangan,злой,emotion,signs/emotion/gazablangan.mp4,fe847109-b29e-4251-9236-8b19d18005c0,,0.0,2.85,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\emotion\gazablangan.mp4,source_missing
+yaxshi,хорошо,emotion,signs/emotion/yaxshi.mp4,fecaec6d-dbec-4b4a-a6db-436ad56d927a,D:\test\fecaec6d-dbec-4b4a-a6db-436ad56d927a.mp4,0.25,2.133,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\emotion\yaxshi.mp4,extracted
+yomon,плохо,emotion,signs/emotion/yomon.mp4,d79db2f1-d189-466f-8289-2279610c2f14,,0.783,2.033,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\emotion\yomon.mp4,source_missing
+tinch,спокойный,emotion,signs/emotion/tinch.mp4,10d48c2b-6fb7-4d33-8b37-8015a47928e1,,0.183,2.7,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\emotion\tinch.mp4,source_missing
+qo'rqinchli,страшный,emotion,signs/emotion/qorqinchli.mp4,a8a480a1-d247-47e1-a696-ff5fa5445509,,0.0,2.95,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\emotion\qorqinchli.mp4,source_missing
+bugun,сегодня,time,signs/time/bugun.mp4,f549af3c-3510-4787-839c-c6d0afecd44b,,0.617,2.2,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\time\bugun.mp4,source_missing
+ertaga,завтра,time,signs/time/ertaga.mp4,c16285cb-d4d8-436b-9df3-8d3a875c2916,,0.583,2.233,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\time\ertaga.mp4,source_missing
+kecha,вчера,time,signs/time/kecha.mp4,402d07f7-4b43-4c8b-b11d-d72103047ae0,,0.15,2.033,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\time\kecha.mp4,source_missing
+tun,ночь,time,signs/time/tun.mp4,c7aa2d2b-cefc-41b3-bba1-48a34da25dbe,,0.517,2.233,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\time\tun.mp4,source_missing
+hafta,неделя,time,signs/time/hafta.mp4,43a25499-62ea-4daa-ad5f-51bd4a6be9a6,,0.517,2.4,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\time\hafta.mp4,source_missing
+oy,месяц,time,signs/time/oy.mp4,c6b5c933-f993-45fb-9875-59f87fc4aeda,,0.483,2.267,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\time\oy.mp4,source_missing
+yil,год,time,signs/time/yil.mp4,b6e28f95-d0b3-40e8-af08-9baaaa51e7e1,D:\test\b6e28f95-d0b3-40e8-af08-9baaaa51e7e1.mp4,0.383,2.633,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\time\yil.mp4,extracted
+soat,час,time,signs/time/soat.mp4,2a3023a2-a723-47b9-9751-e0d3a64ada89,,0.183,1.767,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\time\soat.mp4,source_missing
+daqiqa,минута,time,signs/time/daqiqa.mp4,6d7d2b1f-0ded-4c4b-9623-7d52f65a463f,,0.317,2.033,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\time\daqiqa.mp4,source_missing
+doim,всегда,time,signs/time/doim.mp4,f2ffb622-b013-4de5-b962-22ac167618eb,,0.917,2.5,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\time\doim.mp4,source_missing
+hech qachon,никогда,time,signs/time/hech_qachon.mp4,02f7100d-aec3-4d23-b5fc-c550493525b9,,0.65,1.867,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\time\hech_qachon.mp4,source_missing
+uy,дом,object,signs/object/uy.mp4,e78a79b9-499e-4244-aa85-f4a861944f07,,0.0,2.083,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\object\uy.mp4,source_missing
+maktab,школа,object,signs/object/maktab.mp4,bf768330-c7aa-4a4c-a38b-d76c2ba68bb3,,0.917,2.233,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\object\maktab.mp4,source_missing
+suv,вода,object,signs/object/suv.mp4,b361b61d-0453-4e6b-b9ba-ddc78df5959b,,0.583,1.967,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\object\suv.mp4,source_missing
+ovqat,еда,object,signs/object/ovqat.mp4,a17f7a63-c7c5-4469-86c7-06f32d6e6362,,0.75,2.433,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\object\ovqat.mp4,source_missing
+kitob,книга,object,signs/object/kitob.mp4,77ec105a-1472-492c-a566-a5b797a070f0,D:\test\77ec105a-1472-492c-a566-a5b797a070f0.mp4,1.517,2.6,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\object\kitob.mp4,extracted
+shahar,город,object,signs/object/shahar.mp4,615cc768-933a-44b7-8bc2-2e272905c6f0,,0.217,2.7,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\object\shahar.mp4,source_missing
+do'st,друг,object,signs/object/dost.mp4,09e0e09b-03d9-4993-a2b1-271a83b31511,D:\test\09e0e09b-03d9-4993-a2b1-271a83b31511.mp4,1.65,2.3,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\object\dost.mp4,extracted
+pul,деньги,object,signs/object/pul.mp4,fcd269ef-dd9d-4ef6-88fc-2c6f0f29583a,,0.817,2.0,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\object\pul.mp4,source_missing
+do'kon,магазин,object,signs/object/dokon.mp4,47f124b8-bc62-4846-8a40-4769d181d02e,,0.383,2.6,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\object\dokon.mp4,source_missing
+ko'cha,улица,object,signs/object/kocha.mp4,1416e766-dddf-4338-8539-bad0a0a4e890,,0.55,2.233,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\object\kocha.mp4,source_missing
+odam,человек,object,signs/object/odam.mp4,7ba0d564-36f5-4ec0-a883-c539c46e7bcd,,0.783,2.133,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\object\odam.mp4,source_missing
+erkak,мужчина,object,signs/object/erkak.mp4,f563bae2-1038-4f7a-bdd3-5d8999ee8e20,D:\test\f563bae2-1038-4f7a-bdd3-5d8999ee8e20.mp4,0.517,2.133,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\object\erkak.mp4,extracted
+ayol,женщина,object,signs/object/ayol.mp4,94d95778-dfdc-49fe-bbe9-38e55a196d98,,0.317,2.233,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\object\ayol.mp4,source_missing
+non,хлеб,object,signs/object/non.mp4,506516b3-4ef8-43f3-9e66-9fa0b635ff08,,0.583,2.6,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\object\non.mp4,source_missing
+kiyim,одежда,object,signs/object/kiyim.mp4,067877d6-b63b-4590-8f58-096f4e5d9e84,,0.45,2.033,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\object\kiyim.mp4,source_missing
+katta,большой,adjective,signs/adjective/katta.mp4,bcd53fd6-0b7a-4c6e-bef2-6df9d03e4c5b,,0.583,2.867,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\adjective\katta.mp4,source_missing
+kichik,маленький,adjective,signs/adjective/kichik.mp4,694c3097-c589-4991-92a7-9fb1ab4de6a4,,0.283,2.467,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\adjective\kichik.mp4,source_missing
+yangi,новый,adjective,signs/adjective/yangi.mp4,bab36b64-c3a7-42a7-8002-f5641273b38f,D:\test\bab36b64-c3a7-42a7-8002-f5641273b38f.mp4,0.917,1.967,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\adjective\yangi.mp4,extracted
+eski,старый,adjective,signs/adjective/eski.mp4,4f494b27-2fae-46d6-ab4c-ab1a756afb51,D:\test\4f494b27-2fae-46d6-ab4c-ab1a756afb51.mp4,0.517,2.067,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\adjective\eski.mp4,extracted
+chiroyli,красивый,adjective,signs/adjective/chiroyli.mp4,611fe35f-3289-4ae8-9339-fa06a450784d,,0.05,2.467,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\adjective\chiroyli.mp4,source_missing
+sovuq,холодный,adjective,signs/adjective/sovuq.mp4,72c290ed-3d16-4dae-8068-9e8cad69e6dc,D:\test\72c290ed-3d16-4dae-8068-9e8cad69e6dc.mp4,0.717,2.367,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\adjective\sovuq.mp4,extracted
+tez,быстрый,adjective,signs/adjective/tez.mp4,63af7ffc-df6d-465c-a145-f3221225d51f,,1.25,1.933,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\adjective\tez.mp4,source_missing
+sekin,медленный,adjective,signs/adjective/sekin.mp4,35a129f3-0dce-4330-a20d-81428a243761,,0.25,3.0,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\adjective\sekin.mp4,source_missing
+kuchli,сильный,adjective,signs/adjective/kuchli.mp4,57b0ac71-5e34-4c19-8d13-bc1731ba3270,,0.317,2.1,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\adjective\kuchli.mp4,source_missing
+uzun,длинный,adjective,signs/adjective/uzun.mp4,db25a83b-820a-48e9-baa5-b1e51be0c56e,,0.417,2.633,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\adjective\uzun.mp4,source_missing
+kalta,короткий,adjective,signs/adjective/kalta.mp4,7d250f19-d88c-4a96-8514-3c6799d7647f,,0.983,2.267,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\adjective\kalta.mp4,source_missing
+og'ir,тяжёлый,adjective,signs/adjective/ogir.mp4,fb0bffd1-f8a1-4374-87b8-8090a7d2f3f9,,0.15,2.833,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\adjective\ogir.mp4,source_missing
+yengil,лёгкий,adjective,signs/adjective/yengil.mp4,5b764070-5711-480e-ab71-9f8e229a1048,D:\test\5b764070-5711-480e-ab71-9f8e229a1048.mp4,0.45,2.767,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\adjective\yengil.mp4,extracted
+muhim,важный,adjective,signs/adjective/muhim.mp4,91c3faaf-19c0-49ed-bbbd-d018051560dd,D:\test\91c3faaf-19c0-49ed-bbbd-d018051560dd.mp4,0.583,3.2,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\adjective\muhim.mp4,extracted
+oson,лёгкий,adjective,signs/adjective/oson.mp4,5b764070-5711-480e-ab71-9f8e229a1048,D:\test\5b764070-5711-480e-ab71-9f8e229a1048.mp4,0.45,2.767,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\adjective\oson.mp4,extracted
+ha,да,basic,signs/basic/ha.mp4,e1651e4b-d145-4e5e-8a5f-52261e4b1242,D:\test\e1651e4b-d145-4e5e-8a5f-52261e4b1242.mp4,0.917,2.433,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\basic\ha.mp4,extracted
+bor,есть,basic,signs/basic/bor.mp4,19d28141-2c8d-4c3f-87c6-48aac37cf936,,1.183,2.1,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\basic\bor.mp4,source_missing
+faqat,только,basic,signs/basic/faqat.mp4,6d36a144-48c0-44bf-813c-5d99686fdcde,,0.883,2.033,C:\Users\Admin\Desktop\imo-ishora\execution\clips\signs\basic\faqat.mp4,source_missing

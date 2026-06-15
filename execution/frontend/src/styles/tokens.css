@@ -1,0 +1,70 @@
+/* IMO-ISHORA design tokens — "Tirik Til" (living language).
+   Restrained premium palette: deep neutral base, warm amber action accent,
+   cool cyan technical cue, green success, gray unsupported, red error only. */
+
+:root {
+  /* Base neutrals */
+  --c-bg: #0e0d0b;
+  --c-bg-raised: #17150f; /* shifted up the relief stack */
+  --c-surface: #1d1a14;
+  --c-surface-2: #262017;
+  --c-border: #332c20;
+  --c-border-strong: #4a4030;
+
+  /* Text */
+  --c-text: #f3ede1;
+  --c-text-soft: #c8bfad;
+  --c-text-muted: #8a8170;
+  --c-text-faint: #5f594c;
+
+  /* Accents */
+  --c-amber: #e8a13a;
+  --c-amber-soft: #f0c074;
+  --c-amber-deep: #b97816;
+  --c-cyan: #5fc9d6;
+  --c-green: #6fbf73;
+  --c-gray: #7c7565;
+  --c-red: #e0685f;
+
+  /* Status tints (low-alpha fills) */
+  --c-green-fill: rgba(111, 191, 115, 0.14);
+  --c-amber-fill: rgba(232, 161, 58, 0.14);
+  --c-cyan-fill: rgba(95, 201, 214, 0.12);
+  --c-gray-fill: rgba(124, 117, 101, 0.12);
+  --c-red-fill: rgba(224, 104, 95, 0.14);
+
+  /* Typography */
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  /* Spacing scale */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: 4rem;
+
+  /* Radii */
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-pill: 999px;
+
+  /* Elevation */
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-2: 0 10px 30px rgba(0, 0, 0, 0.45);
+  --shadow-amber: 0 8px 28px rgba(232, 161, 58, 0.22);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 140ms;
+  --dur-mid: 260ms;
+
+  /* Layout */
+  --maxw: 720px;
+  --focus-ring: 0 0 0 3px rgba(232, 161, 58, 0.5);
+}
